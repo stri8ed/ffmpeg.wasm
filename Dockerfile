@@ -158,8 +158,6 @@ RUN bash -x /src/build.sh \
       --enable-encoder=mjpeg \
       --enable-nonfree \
       --enable-gpl \
-      --enable-libx264 \
-      --enable-libx265 \
       --enable-libvpx \
       --enable-libmp3lame \
       --enable-libtheora \
