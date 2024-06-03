@@ -152,7 +152,6 @@ FROM ffmpeg-base AS ffmpeg-builder
 COPY build/ffmpeg.sh /src/build.sh
 RUN bash -x /src/build.sh \
       --disable-encoders
-      --disable-hwaccels
       --enable-encoder=libmp3lame
       --enable-encoder=png
       --enable-encoder=mjpeg
