@@ -191,6 +191,7 @@ ENV FFMPEG_LIBS \
       -lsharpyuv \
       -lfreetype \
       -lharfbuzz \
+      -lass \
       -lzimg
 RUN mkdir -p /src/dist/umd && bash -x /src/build.sh \
       ${FFMPEG_LIBS} \
