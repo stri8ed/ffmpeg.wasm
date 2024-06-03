@@ -151,6 +151,19 @@ COPY --from=zimg-builder $INSTALL_DIR $INSTALL_DIR
 FROM ffmpeg-base AS ffmpeg-builder
 COPY build/ffmpeg.sh /src/build.sh
 RUN bash -x /src/build.sh \
+      --disable-encoders
+      --disable-hwaccels
+      --enable-encoder=libmp3lame
+      --enable-encoder=png
+      --enable-encoder=mjpeg
+
+      --enable-gpl
+      --enable-nonfree
+      --enable-zlib
+      --enable-libmp3lame
+      --enable-libfreetype
+      --enable-libwebp   
+
       --enable-gpl \
       --enable-libx264 \
       --enable-libx265 \
@@ -162,7 +175,6 @@ RUN bash -x /src/build.sh \
       --enable-zlib \
       --enable-libwebp \
       --enable-libfreetype \
-      --enable-libfribidi \
       --enable-libass \
       --enable-libzimg 
 
@@ -173,14 +185,11 @@ COPY src/fftools /src/src/fftools
 COPY build/ffmpeg-wasm.sh build.sh
 # libraries to link
 ENV FFMPEG_LIBS \
-      -lx264 \
-      -lx265 \
       -lvpx \
       -lmp3lame \
       -logg \
       -ltheora \
       -lvorbis \
-      -lvorbisenc \
       -lvorbisfile \
       -lopus \
       -lz \
@@ -188,9 +197,7 @@ ENV FFMPEG_LIBS \
       -lwebp \
       -lsharpyuv \
       -lfreetype \
-      -lfribidi \
       -lharfbuzz \
-      -lass \
       -lzimg
 RUN mkdir -p /src/dist/umd && bash -x /src/build.sh \
       ${FFMPEG_LIBS} \

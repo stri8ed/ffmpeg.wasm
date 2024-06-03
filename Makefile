@@ -22,7 +22,6 @@ build:
 		docker buildx build \
 			--build-arg EXTRA_CFLAGS \
 			--build-arg EXTRA_LDFLAGS \
-			--build-arg FFMPEG_MT \
 			--build-arg FFMPEG_ST \
 			-o ./packages/core$(PKG_SUFFIX) \
 			$(EXTRA_ARGS) \
