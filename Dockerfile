@@ -172,7 +172,8 @@ RUN bash -x /src/build.sh \
       --disable-outdevs \
 
       --disable-muxers \
-      --enable-muxer=mp3
+      --enable-muxer=mp3 \
+      --enable-muxer=segment
 
 # Build ffmpeg.wasm
 FROM ffmpeg-builder AS ffmpeg-wasm-builder
