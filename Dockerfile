@@ -163,7 +163,7 @@ RUN bash -x /src/build.sh \
       --enable-libopus \
 
       --disable-filters \
-      --enable-filter=trim,atrim \
+      --enable-filter=trim,atrim,anull \
       --enable-filter=abuffersink,aformat \
       --enable-filter=abuffer \
       --enable-filter=amix,aresample \
