@@ -151,10 +151,10 @@ COPY --from=zimg-builder $INSTALL_DIR $INSTALL_DIR
 FROM ffmpeg-base AS ffmpeg-builder
 COPY build/ffmpeg.sh /src/build.sh
 RUN bash -x /src/build.sh \
-      --disable-protocols
+      --disable-protocols \
       --disable-encoders \
       --disable-hwaccels \
-      --enable-protocol=file
+      --enable-protocol=file \
       --enable-encoder=libmp3lame \
       --enable-nonfree \
       --enable-gpl \
