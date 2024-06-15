@@ -161,18 +161,22 @@ RUN bash -x /src/build.sh \
       --enable-libmp3lame \
       --enable-libvorbis \
       --enable-libopus \
+      --enable-encoder=mjpeg \
 
       --disable-filters \
       --enable-filter=trim,atrim,anull \
       --enable-filter=abuffersink,aformat \
       --enable-filter=abuffer \
       --enable-filter=amix,aresample \
+      --enable-filter=scale \
+      --enable-filter=crop \
 
       --disable-indevs \
       --disable-outdevs \
 
       --disable-muxers \
       --enable-muxer=mp3 \
+     --enable-muxer=image2 \
       --enable-muxer=segment
 
 # Build ffmpeg.wasm
