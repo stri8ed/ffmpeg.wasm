@@ -170,6 +170,7 @@ RUN bash -x /src/build.sh \
       --enable-filter=amix,aresample \
       --enable-filter=scale \
       --enable-filter=crop \
+      --enable-filter=select \
 
       --disable-indevs \
       --disable-outdevs \
