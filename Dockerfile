@@ -164,7 +164,7 @@ RUN bash -x /src/build.sh \
       --enable-encoder=mjpeg \
 
       --disable-filters \
-      --enable-filter=trim,atrim,anull \
+      --enable-filter=trim,atrim,anull,null \
       --enable-filter=abuffersink,aformat \
       --enable-filter=abuffer \
       --enable-filter=amix,aresample \
