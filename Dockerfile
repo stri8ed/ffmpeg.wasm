@@ -171,6 +171,8 @@ RUN bash -x /src/build.sh \
       --enable-filter=scale \
       --enable-filter=crop \
       --enable-filter=select \
+      --enable-filter=format \
+      --enable-filter=pad \
 
       --disable-indevs \
       --disable-outdevs \
