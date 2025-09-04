@@ -162,7 +162,7 @@ RUN bash -x /src/build.sh \
       --enable-libvorbis \
       --enable-libopus \
       --enable-encoder=mjpeg \
-
+      --enable-encoder=pcm_s16le \
       --disable-filters \
       --enable-filter=trim,atrim,anull,null \
       --enable-filter=abuffersink,aformat \
