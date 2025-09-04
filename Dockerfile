@@ -173,10 +173,8 @@ RUN bash -x /src/build.sh \
       --enable-filter=select \
       --enable-filter=format \
       --enable-filter=pad \
-
       --disable-indevs \
       --disable-outdevs \
-
       --disable-muxers \
       --enable-muxer=mp3 \
       --enable-muxer=image2 \
@@ -206,4 +204,4 @@ RUN mkdir -p /src/dist/esm && bash -x /src/build.sh \
 
 # Export ffmpeg-core.wasm to dist/, use `docker buildx build -o . .` to get assets
 FROM scratch AS exportor
-COPY --from=ffmpeg-wasm-builder /src/dist /dist
+COPY --from=ffmpeg-wasm-builder /src/dist .
