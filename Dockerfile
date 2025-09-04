@@ -179,8 +179,9 @@ RUN bash -x /src/build.sh \
 
       --disable-muxers \
       --enable-muxer=mp3 \
-     --enable-muxer=image2 \
-      --enable-muxer=segment
+      --enable-muxer=image2 \
+      --enable-muxer=segment \
+      --enable-muxer=pcm_s16le
 
 # Build ffmpeg.wasm
 FROM ffmpeg-builder AS ffmpeg-wasm-builder
