@@ -167,6 +167,8 @@ RUN bash -x /src/build.sh \
       --enable-filter=trim,atrim,anull,null \
       --enable-filter=abuffersink,aformat \
       --enable-filter=abuffer \
+      --enable-filter=highpass \
+      --enable-filter=lowpass \
       --enable-filter=amix,aresample \
       --enable-filter=scale \
       --enable-filter=crop \
