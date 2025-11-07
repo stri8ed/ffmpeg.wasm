@@ -182,7 +182,9 @@ RUN bash -x /src/build.sh \
       --enable-muxer=image2 \
       --enable-muxer=segment \
       --enable-muxer=s16le \
-      --enable-muxer=wav
+      --enable-muxer=wav \
+      --enable-muxer=mp4 \
+      --enable-muxer=mov
 
 # Build ffmpeg.wasm
 FROM ffmpeg-builder AS ffmpeg-wasm-builder
