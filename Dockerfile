@@ -184,6 +184,7 @@ RUN bash -x /src/build.sh \
       --enable-muxer=s16le \
       --enable-muxer=wav \
       --enable-muxer=mp4 \
+      --enable-muxer=hls \
       --enable-muxer=mov
 
 # Build ffmpeg.wasm
