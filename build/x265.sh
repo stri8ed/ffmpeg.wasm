@@ -32,6 +32,12 @@ FLAGS_MAIN=(
 )
 
 cd source
+
+# Fix for "unsupported option -march=" error in Emscripten
+# Completely remove/comment out all march-related lines in all CMakeLists.txt files
+find . -name "CMakeLists.txt" -exec sed -i.bak '/GCC_ARCH/d' {} \;
+find . -name "CMakeLists.txt" -exec sed -i.bak '/-march=/d' {} \;
+
 rm -rf build
 mkdir -p build
 cd build
