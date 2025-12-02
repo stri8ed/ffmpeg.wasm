@@ -42,6 +42,7 @@ CONF_FLAGS=(
   -sEXPORTED_RUNTIME_METHODS=$(node src/bind/ffmpeg/export-runtime.js) # exported built-in functions
   -lworkerfs.js
   --pre-js src/bind/ffmpeg/bind.js        # extra bindings, contains most of the ffmpeg.wasm javascript code
+  --pre-js src/bind/ffmpeg/opfs-device.js # custom OPFS device backend
   # ffmpeg source code
   src/fftools/cmdutils.c 
   src/fftools/ffmpeg.c 
