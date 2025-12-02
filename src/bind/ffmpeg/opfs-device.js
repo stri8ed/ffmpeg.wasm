@@ -56,13 +56,11 @@ Module["registerOpfsFile"] = function(path, accessHandle) {
                 // or if 'buffer' is a view that accessHandle doesn't like.
                 // Generally, passing the subarray is fine.
 
-                const bytesRead = accessHandle.read(buffer.subarray(offset, offset + length), { at: position });
-                return bytesRead;
+                return accessHandle.read(buffer.subarray(offset, offset + length), {at: position});
             },
             write: function(stream, buffer, offset, length, position) {
                 // accessHandle.write(buffer, { at: position })
-                const bytesWritten = accessHandle.write(buffer.subarray(offset, offset + length), { at: position });
-                return bytesWritten;
+                return accessHandle.write(buffer.subarray(offset, offset + length), {at: position});
             },
             llseek: function(stream, offset, whence) {
                 let position = stream.position;
