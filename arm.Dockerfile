@@ -163,6 +163,7 @@ RUN bash -x /src/build.sh \
       --enable-libopus \
       --enable-encoder=mjpeg \
       --enable-encoder=pcm_s16le \
+      --enable-encoder=mov_text \
       --disable-filters \
       --enable-filter=trim,atrim,anull,null \
       --enable-filter=abuffersink,aformat \
@@ -184,6 +185,7 @@ RUN bash -x /src/build.sh \
       --enable-muxer=s16le \
       --enable-muxer=wav \
       --enable-muxer=mp4 \
+      --enable-muxer=matroska \
       --enable-muxer=hls \
       --enable-muxer=mov
 
