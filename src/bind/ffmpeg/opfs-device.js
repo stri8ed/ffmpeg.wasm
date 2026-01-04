@@ -63,6 +63,7 @@ Module["registerOpfsFile"] = function(path, accessHandle) {
                     return accessHandle.write(buffer.subarray(offset, offset + length), {at: position});
                 } catch (e) {
                     if (e.name === 'QuotaExceededError') {
+                        Module["_opfs_quota_exceeded"] = true;
                         throw new FS.ErrnoError(28);
                     }
                     throw e;
