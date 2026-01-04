@@ -101,3 +101,15 @@ Module["registerOpfsFile"] = function(path, accessHandle) {
         return false;
     }
 };
+
+Module["unregisterOpfsFile"] = function(path) {
+    try {
+        const node = FS.lookupPath(path).node;
+        FS.unlink(path);
+        delete FS.devices[node.rdev];
+        return true;
+    } catch (e) {
+        console.error("Failed to unregister OPFS device:", e);
+        return false;
+    }
+};
