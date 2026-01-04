@@ -59,8 +59,14 @@ Module["registerOpfsFile"] = function(path, accessHandle) {
                 return accessHandle.read(buffer.subarray(offset, offset + length), {at: position});
             },
             write: function(stream, buffer, offset, length, position) {
-                // accessHandle.write(buffer, { at: position })
-                return accessHandle.write(buffer.subarray(offset, offset + length), {at: position});
+                try {
+                    return accessHandle.write(buffer.subarray(offset, offset + length), {at: position});
+                } catch (e) {
+                    if (e.name === 'QuotaExceededError') {
+                        throw new FS.ErrnoError(28);
+                    }
+                    throw e;
+                }
             },
             llseek: function(stream, offset, whence) {
                 let position = stream.position;
